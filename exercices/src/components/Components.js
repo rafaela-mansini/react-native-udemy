@@ -3,7 +3,7 @@ import { Text } from 'react-native'
 import Style from './style'
 
 export const Comp1 = () => {
-    return <Text style={Style.textBig}>Componente 1</Text>
+    return <Text>Componente 1</Text>
 }
 
 export const Comp2 = function () {
