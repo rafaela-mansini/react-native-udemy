@@ -1,19 +1,11 @@
 import React from 'react';
-import  {Text} from 'react-native';
+import  { View, Text, StyleSheet } from 'react-native';
+import { Comp1, Comp2 } from './components/Components';
 
-// normal function
-// function App(){
-//     return <Text>Olá mundo...</Text>
-// }
+export default () => (
+    <View>
+        <Comp1 />
+        <Comp2 />
+    </View>
 
-// save like a constant
-// const App = function() {
-//     return <Text>Olá mundo...</Text>
-// }
-
-// return like a arrow function
-// export default () => {
-//     return <Text>Return like a arrow function</Text>
-// }
-
-export default () => <Text>Return when is only one simple component</Text>
+)
