@@ -5,6 +5,7 @@ import MinMax from './components/MinMax'
 import Random from './components/Random'
 import Title from './components/Title'
 import Button from './components/Button'
+import Counter from './components/Counter'
 
 
 export default () => (
@@ -14,8 +15,9 @@ export default () => (
         <MinMax min="3" max="20" />
         <MinMax min={8} max={72} />
         <Random min={10} max={88} random={985} />
-        <Title first={'Cadastro produto'} second={'Tela de cadastro'} /> */}
-        <Button />
+        <Title first={'Cadastro produto'} second={'Tela de cadastro'} />
+        <Button /> */}
+        <Counter initial={80} steps={20} />
     </View>
 
 )
