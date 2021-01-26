@@ -2,6 +2,7 @@ import React from 'react';
 import  { View, Text, StyleSheet } from 'react-native';
 import { Comp1, Comp2 } from './components/Components';
 import MinMax from './components/MinMax'
+import Random from './components/Random'
 
 export default () => (
     <View style={style.App}>
@@ -9,6 +10,7 @@ export default () => (
         <Comp2 />
         <MinMax min="3" max="20" />
         <MinMax min={8} max={72} />
+        <Random min={10} max={88} random={985} />
     </View>
 
 )
