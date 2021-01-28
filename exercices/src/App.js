@@ -8,6 +8,7 @@ import Button from './components/Button'
 import Counter from './components/Counter'
 import Father from './components/indirect/Father'
 import CounterV2 from './components/counter/Counter'
+import Diferences from './components/Diferences'
 
 export default () => (
     <View style={style.App}>
@@ -19,10 +20,10 @@ export default () => (
         <Title first={'Cadastro produto'} second={'Tela de cadastro'} />
         <Button />
         <Counter initial={80} steps={20} />
-        <Father />
-         */}
+        <Father /> 
          <CounterV2 />
-
+        */}
+        <Diferences />
     </View>
 
 )
