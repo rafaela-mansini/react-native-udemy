@@ -13,7 +13,7 @@ import Conditionals from './components/Conditionals'
 import Family from './components/relations/Family'
 import Members from './components/relations/Members';
 import AuthLogged from './components/conditionalComponent/authLogged'
-import Products from './components/products/List'
+import Products from './components/products/ListV2'
 
 export default () => (
     <SafeAreaView style={style.App}>
