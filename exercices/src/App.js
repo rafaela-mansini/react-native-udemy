@@ -1,5 +1,5 @@
 import React from 'react';
-import  { View, Text, StyleSheet } from 'react-native';
+import  { Text, StyleSheet, SafeAreaView } from 'react-native';
 import { Comp1, Comp2 } from './components/Components';
 import MinMax from './components/MinMax'
 import Random from './components/Random'
@@ -9,9 +9,12 @@ import Counter from './components/Counter'
 import Father from './components/indirect/Father'
 import CounterV2 from './components/counter/Counter'
 import Diferences from './components/Diferences'
+import Conditionals from './components/Conditionals'
+import Family from './components/relations/Family'
+import Members from './components/relations/Members';
 
 export default () => (
-    <View style={style.App}>
+    <SafeAreaView style={style.App}>
         {/* <Comp1 />
         <Comp2 />
         <MinMax min="3" max="20" />
@@ -22,9 +25,20 @@ export default () => (
         <Counter initial={80} steps={20} />
         <Father /> 
          <CounterV2 />
+         <Diferences />
+         <Conditionals num={70} />
         */}
-        <Diferences />
-    </View>
+        <Family>
+            <Members name="Ana" lastname="Silva" />
+            <Members name="Julia" lastname="Silva" />
+        </Family>
+
+        <Family>
+            <Members name="Carlos" lastname="Arruda" />
+            <Members name="Joãozinho" lastname="Arruda" />
+        </Family>
+        
+    </SafeAreaView>
 
 )
 
