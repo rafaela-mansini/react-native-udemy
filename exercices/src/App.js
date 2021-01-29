@@ -14,6 +14,7 @@ import Family from './components/relations/Family'
 import Members from './components/relations/Members';
 import AuthLogged from './components/conditionalComponent/authLogged'
 import Products from './components/products/ListV2'
+import TextName from './components/TextName'
 
 export default () => (
     <SafeAreaView style={style.App}>
@@ -39,8 +40,9 @@ export default () => (
             <Members name="Joãozinho" lastname="Arruda" />
         </Family>
         <AuthLogged user={{name: 'Gui', email: 'gui@gui.com'}} />
-        */}
         <Products />
+        */}
+        <TextName />
         
         
     </SafeAreaView>
