@@ -12,6 +12,7 @@ import Diferences from './components/Diferences'
 import Conditionals from './components/Conditionals'
 import Family from './components/relations/Family'
 import Members from './components/relations/Members';
+import AuthLogged from './components/conditionalComponent/authLogged'
 
 export default () => (
     <SafeAreaView style={style.App}>
@@ -27,7 +28,6 @@ export default () => (
          <CounterV2 />
          <Diferences />
          <Conditionals num={70} />
-        */}
         <Family>
             <Members name="Ana" lastname="Silva" />
             <Members name="Julia" lastname="Silva" />
@@ -37,6 +37,8 @@ export default () => (
             <Members name="Carlos" lastname="Arruda" />
             <Members name="Joãozinho" lastname="Arruda" />
         </Family>
+        */}
+        <AuthLogged user={{name: 'Gui', email: 'gui@gui.com'}} />
         
     </SafeAreaView>
 
