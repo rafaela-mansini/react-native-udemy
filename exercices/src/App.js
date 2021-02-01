@@ -16,6 +16,7 @@ import AuthLogged from './components/conditionalComponent/authLogged'
 import Products from './components/products/ListV2'
 import TextName from './components/TextName'
 import Flexbox from './components/layout/FlexboxV4';
+import Mega from './components/mega/Mega'
 
 export default () => (
     <SafeAreaView style={style.App}>
@@ -43,8 +44,9 @@ export default () => (
         <AuthLogged user={{name: 'Gui', email: 'gui@gui.com'}} />
         <Products />
         <TextName />
-        */}
         <Flexbox />
+        */}
+        <Mega numbers={12} />
         
         
     </SafeAreaView>
