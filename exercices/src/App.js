@@ -46,7 +46,7 @@ export default () => (
         <TextName />
         <Flexbox />
         */}
-        <Mega numbers={12} />
+        <Mega quantityNumbers={12} />
         
         
     </SafeAreaView>
