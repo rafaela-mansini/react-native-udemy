@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Text, TextInput, Button } from 'react-native'
+import { Text, TextInput, Button, View } from 'react-native'
 import Style from '../style'
+import NumberComponent from './Number'
 
 export default class Mega extends Component {
 
@@ -15,6 +16,14 @@ export default class Mega extends Component {
 
     setNumbers = (text) => {
         this.setState({numbers: text})
+    }
+
+    showNumbers = () => {
+        const nums = this.state.numbers
+        return nums.map(num => {
+            return <NumberComponent key={num} quantityNumbers={num} />
+        })
+
     }
 
     generateNumbersNotContents = arrNums => {
@@ -67,7 +76,14 @@ export default class Mega extends Component {
                     title="Generate"
                     onPress={this.generateNumbers}
                 />
-                <Text>{this.state.numbers.join(',')}</Text>
+                <View style={{
+                    flexDirection: 'row',
+                    flexWrap: 'wrap',
+                    justifyContent: 'center',
+                    alignContent: 'center'
+                }}>
+                    {this.showNumbers()}
+                </View>
             </>
         )
     }
