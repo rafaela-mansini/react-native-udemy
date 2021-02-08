@@ -1,12 +1,14 @@
 import React from 'react'
 import {View, StyleSheet, Text} from 'react-native'
 import params from '../params'
+import Mine from './Mine'
 
-const Field = ({ mined, opened, nearMines }) => {
+const Field = ({ mined, opened, nearMines, exploded }) => {
     // const { mined, opened, nearMines } = props // posso declarar desta forma ou utilizar dentro do parametro da função como está agora
     const styleField = [styles.field]
 
     if(opened) styleField.push(styles.opened) // se a mina estiver aberta
+    if(exploded) styleField.push(styles.exploded) // se a mina estiver explodida
     if(styleField.length === 1) styleField.push(styles.regular) // se não tiver nenhum outro estilo ele coloca o regular, que é a mina fechada
 
     let color = null // esta cor vai ser renderizada a partir da quantidade de minas ao redor
@@ -23,6 +25,8 @@ const Field = ({ mined, opened, nearMines }) => {
                 <Text style={[styles.label, {color: color}]}>{nearMines}</Text>
                 : false
             }
+            {/* Se ela estiver aberta e também minada ela deve aparecer a mina */}
+            {mined && opened ? <Mine /> : false}
         </View>
     )
 }
@@ -49,6 +53,10 @@ const styles = StyleSheet.create({
     label: {
         fontWeight: 'bold',
         fontSize: params.fontSize,
+    },
+    exploded: {
+        backgroundColor: 'red',
+        borderColor: 'red',
     }
 })
 
