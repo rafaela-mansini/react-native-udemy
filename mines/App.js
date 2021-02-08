@@ -1,7 +1,7 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import params from './src/params'
+import Field from './src/components/Field'
 
 export default function App() {
   return (
@@ -10,6 +10,7 @@ export default function App() {
       <Text>Tamanho da grade:
         {params.getRowsAmount()} x {params.getColumnsAmount()}
       </Text>
+      <Field />
     </View>
   );
 }
