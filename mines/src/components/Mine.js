@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
     line: {
         position: 'absolute',
         top: 5,
+        right: -3,
         height: 3,
         width: 20,
         borderRadius: 3,
