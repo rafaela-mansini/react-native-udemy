@@ -19,6 +19,9 @@ export default function App() {
       <Field mined />
       <Field mined opened />
       <Field mined opened exploded />
+      <Field flagged />
+      <Field flagged opened />
+
     </View>
   );
 }
@@ -26,7 +29,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#F5FCFF',
     alignItems: 'center',
     justifyContent: 'center',
   },
