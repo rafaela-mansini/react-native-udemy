@@ -2,7 +2,7 @@
 const createBoard = (rows,columns) => {
     // função Array(quantidade).fill(valor) => vai gerar um array de x quantidade e inserir o valor informado no fill...
     return Array(rows).fill(0).map((_, row) => {
-        Array(columns).fill(0).map((_, column) => {
+        return Array(columns).fill(0).map((_, column) => {
             return {
                 row,
                 column,
