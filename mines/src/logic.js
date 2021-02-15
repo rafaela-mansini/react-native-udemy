@@ -107,5 +107,11 @@ const wonGame = board => fields(board).filter(pendding).length === 0
 // transforma o tabuleiro em um array, filtrou os campos que estão minados e abriu os campos que estão minados
 const showMines = board => fields(board).filter(field => field.mined).forEach(field => field.opened = true)
 
+const invertFlag = (board, row, column) => {
+    const field = board[row][column]
+    field.flagged = !field.flagged
+}
 
-export { createMinedBoard, cloneBoard, openField, hasExplosion, wonGame, showMines }
+const flagsUsed = board => fields(board).filter(field => field.flagged).length
+
+export { createMinedBoard, cloneBoard, openField, hasExplosion, wonGame, showMines, invertFlag, flagsUsed }

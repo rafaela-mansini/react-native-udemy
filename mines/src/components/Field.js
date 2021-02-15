@@ -4,7 +4,7 @@ import params from '../params'
 import Mine from './Mine'
 import Flag from './Flag'
 
-const Field = ({ mined, opened, nearMines, exploded, flagged, onOpen }) => {
+const Field = ({ mined, opened, nearMines, exploded, flagged, onOpen, onFlag }) => {
     // const { mined, opened, nearMines } = props // posso declarar desta forma ou utilizar dentro do parametro da função como está agora
     const styleField = [styles.field]
 
@@ -22,7 +22,8 @@ const Field = ({ mined, opened, nearMines, exploded, flagged, onOpen }) => {
     }
 
     return (
-        <TouchableWithoutFeedback onPress={onOpen}>
+        <TouchableWithoutFeedback onPress={onOpen}
+            onLongPress={onFlag}>
             <View style={styleField}>
                 {!mined && opened && nearMines > 0 ?
                     <Text style={[styles.label, {color: color}]}>{nearMines}</Text>
