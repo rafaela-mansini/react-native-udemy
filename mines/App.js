@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Alert } from 'react-native';
 import params from './src/params'
 import MineField from './src/components/MineField'
 import { createMinedBoard, cloneBoard, openField, hasExplosion, wonGame, showMines, invertFlag, flagsUsed } from './src/logic'
-import Field from './src/components/Field'
+import Header from './src/components/Header'
 
 export default class App extends Component {
 
@@ -62,13 +62,11 @@ export default class App extends Component {
 
     return (
       <View style={styles.container}>
-        <Text>Iniciando o mines</Text>
-        <Text>Tamanho da grade:
-          {params.getRowsAmount()} x {params.getColumnsAmount()}
-        </Text>
-
+        <Header 
+          flagsLeft={this.minesAmount() - flagsUsed(this.state.board)}
+          onNewGame={() => this.setState(this.createState())}
+        />
         <View style={styles.board}>
-          {/* <Field nearMines={2} opened /> */}
           <MineField board={this.state.board} onOpenField={this.onOpenField} onFlagField={this.onFlagField} />
         </View>
           
