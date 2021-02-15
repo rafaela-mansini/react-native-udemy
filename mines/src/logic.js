@@ -54,7 +54,7 @@ const cloneBoard = board => {
 const getNeighbors = (board, row, column) =>{
     const neighbors = []
     const rows = [row - 1, row, row + 1]
-    const columns = [columns - 1, columns, columns + 1]
+    const columns = [column - 1, column, column + 1]
     rows.forEach(r => {
         columns.forEach(c => {
             const diffrent = r !== row || c !== column // não pode ser o elemento que foi clicado
@@ -82,10 +82,12 @@ const openField = (board, row, column) =>{
         }
         else if(safeNeighborhood(board, row, column)){ // se a vizinhança estiver segura, pega os itens da vizinhança e abre os campos
             getNeighbors(board, row, column).forEach(n => openField(board, n.row, n.column))
+            console.debug('is save')
         }
         else { // se a vizinhança não estiver segura
-            const neighbors = getNeighbors(board, row, column) // returna as minas da vizinhança que estou clicando
+            const neighbors = getNeighbors(board, row, column) // retorna as minas da vizinhança que estou clicando
             field.nearMines = neighbors.filter(n => n.mined).length // filtro as minas da vizinhança que tem mined = true e pego o tamanho dele
+            console.debug('is NOT save')
         }
     }
 }

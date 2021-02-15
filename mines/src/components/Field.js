@@ -1,10 +1,10 @@
 import React from 'react'
-import {View, StyleSheet, Text} from 'react-native'
+import {View, StyleSheet, Text, TouchableWithoutFeedback, ProgressViewIOSComponent} from 'react-native'
 import params from '../params'
 import Mine from './Mine'
 import Flag from './Flag'
 
-const Field = ({ mined, opened, nearMines, exploded, flagged }) => {
+const Field = ({ mined, opened, nearMines, exploded, flagged, onOpen }) => {
     // const { mined, opened, nearMines } = props // posso declarar desta forma ou utilizar dentro do parametro da função como está agora
     const styleField = [styles.field]
 
@@ -22,15 +22,17 @@ const Field = ({ mined, opened, nearMines, exploded, flagged }) => {
     }
 
     return (
-        <View style={styleField}>
-            {!mined && opened && nearMines > 0 ?
-                <Text style={[styles.label, {color: color}]}>{nearMines}</Text>
-                : false
-            }
-            {/* Se ela estiver aberta e também minada ela deve aparecer a mina */}
-            {mined && opened ? <Mine /> : false}
-            {flagged && !opened ? <Flag /> : false}
-        </View>
+        <TouchableWithoutFeedback onPress={onOpen}>
+            <View style={styleField}>
+                {!mined && opened && nearMines > 0 ?
+                    <Text style={[styles.label, {color: color}]}>{nearMines}</Text>
+                    : false
+                }
+                {/* Se ela estiver aberta e também minada ela deve aparecer a mina */}
+                {mined && opened ? <Mine /> : false}
+                {flagged && !opened ? <Flag /> : false}
+            </View>
+        </TouchableWithoutFeedback>
     )
 }
 
