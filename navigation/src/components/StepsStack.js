@@ -20,7 +20,7 @@ const StepStack = props => {
                             onPress={() => {
                                 props.navigation.push(
                                     props.next,
-                                    { number: parseInt(Math.random() * 100) }
+                                    props.paramsNext || 1
                                 )
                             }}
                         />

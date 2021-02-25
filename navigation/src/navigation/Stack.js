@@ -20,7 +20,7 @@ const Stack = props => {
             <StackNav.Screen name="ViewB" 
                 options={{title: "ViewB"}}>
                 {props => (
-                    <StepStack {...props} next="ViewC" back="ViewA"><ViewB /></StepStack>
+                    <StepStack {...props} next="ViewC" back="ViewA" paramsNext={{number: 107}}><ViewB /></StepStack>
                 )}
             </StackNav.Screen>
             <StackNav.Screen name="ViewC" 
