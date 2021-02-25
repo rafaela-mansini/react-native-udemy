@@ -23,7 +23,12 @@ const Stack = props => {
                     <StepStack {...props} next="ViewC" back="ViewA"><ViewB /></StepStack>
                 )}
             </StackNav.Screen>
-            <StackNav.Screen name="ViewC" component={ViewC} />
+            <StackNav.Screen name="ViewC" 
+                options={{title: "ViewC"}}>
+                {props => (
+                    <StepStack {...props} next="ViewC" back><ViewC {...props} /></StepStack>
+                )}
+            </StackNav.Screen>
         </StackNav.Navigator>
     )
 }

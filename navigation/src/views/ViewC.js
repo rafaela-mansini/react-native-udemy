@@ -4,7 +4,7 @@ import CenterText from '../components/CenterText'
 const ViewA = props => {
     return(
     <CenterText ColorBg='#963256'>
-        View C
+        View C #${props.route.params.number}
     </CenterText>
     )
 }

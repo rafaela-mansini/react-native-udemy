@@ -18,7 +18,10 @@ const StepStack = props => {
                     ?   <Button
                             title='Next'
                             onPress={() => {
-                                props.navigation.navigate(props.next)
+                                props.navigation.push(
+                                    props.next,
+                                    { number: parseInt(Math.random() * 100) }
+                                )
                             }}
                         />
                     : false
