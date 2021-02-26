@@ -10,8 +10,8 @@ const index = props => {
         <SafeAreaView style={{flex: 1}}>
             <NavigationContainer>
                 {/* <Stack /> */}
-                {/* <Tabs /> */}
-                <Drawer />
+                <Tabs />
+                {/* <Drawer /> */}
             </NavigationContainer>
         </SafeAreaView>
     )
